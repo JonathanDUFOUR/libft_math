@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 02:53:17 by jodufour          #+#    #+#              #
-#    Updated: 2021/07/22 20:40:35 by jodufour         ###   ########.fr        #
+#    Updated: 2021/07/22 20:46:04 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,9 @@ OBJD	=	objs/
 #            SOURCE FILES            #
 ######################################
 SRCS	=	\
-			ft_isprime.c		\
+			ft_isprime.c	\
 			ft_next_prime.c	\
-			ft_power.c			\
+			ft_power.c		\
 			ft_sqrt.c
 
 ######################################
