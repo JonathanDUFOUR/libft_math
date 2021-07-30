@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 02:53:17 by jodufour          #+#    #+#              #
-#    Updated: 2021/07/30 03:18:23 by jodufour         ###   ########.fr        #
+#    Updated: 2021/07/30 03:30:26 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ OBJ_DIR	=	objs/
 ######################################
 #            SOURCE FILES            #
 ######################################
-SRC	=	\
+SRC		=	\
 			ft_isprime.c	\
 			ft_next_prime.c	\
 			ft_power.c		\
@@ -44,10 +44,10 @@ SRC	=	\
 ######################################
 #            OBJECT FILES            #
 ######################################
-OBJ	=	${SRC:.c=.o}
-OBJ	:=	${addprefix ${OBJ_DIR}, ${OBJ}}
+OBJ		=	${SRC:.c=.o}
+OBJ		:=	${addprefix ${OBJ_DIR}, ${OBJ}}
 
-DEP	=	${OBJ:.o=.d}
+DEP		=	${OBJ:.o=.d}
 
 #######################################
 #                FLAGS                #
