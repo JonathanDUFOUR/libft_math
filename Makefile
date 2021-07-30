@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/21 02:53:17 by jodufour          #+#    #+#              #
-#    Updated: 2021/07/22 20:46:04 by jodufour         ###   ########.fr        #
+#    Updated: 2021/07/30 03:18:23 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 #               COMANDS               #
 #######################################
 CC		=	gcc -c -o
-LINKER	=	ar rcs
-MAKEDIR	=	mkdir -p
+LINK	=	ar rcs
+MKDIR	=	mkdir -p
 RM		=	rm -rf
 
 #######################################
@@ -28,14 +28,14 @@ NAME_SO	=	${NAME}.so
 #######################################
 #             DIRECTORIES             #
 #######################################
-INCD	=	includes/
-SRCD	=	srcs/
-OBJD	=	objs/
+INC_DIR	=	includes/
+SRC_DIR	=	srcs/
+OBJ_DIR	=	objs/
 
 ######################################
 #            SOURCE FILES            #
 ######################################
-SRCS	=	\
+SRC	=	\
 			ft_isprime.c	\
 			ft_next_prime.c	\
 			ft_power.c		\
@@ -44,15 +44,15 @@ SRCS	=	\
 ######################################
 #            OBJECT FILES            #
 ######################################
-OBJS	=	${SRCS:.c=.o}
-OBJS	:=	${addprefix ${OBJD}, ${OBJS}}
+OBJ	=	${SRC:.c=.o}
+OBJ	:=	${addprefix ${OBJ_DIR}, ${OBJ}}
 
-DEPS	=	${OBJS:.o=.d}
+DEP	=	${OBJ:.o=.d}
 
 #######################################
 #                FLAGS                #
 #######################################
-CFLAGS	=	-Wall -Wextra -MMD -I${INCD}
+CFLAGS	=	-Wall -Wextra -MMD -I${INC_DIR}
 
 ifeq (DEBUG, true)
 	CFLAGS	+=	-g
@@ -63,33 +63,33 @@ LDFLAGS	=
 #######################################
 #                RULES                #
 #######################################
-${NAME_A}:	${OBJS}
-	${LINKER} $@ ${LDFLAGS} $^
+${NAME_A}:	${OBJ}
+	${LINK} $@ ${LDFLAGS} $^
 
 ${NAME_SO}:	CFLAGS	+= -fPIC
 ${NAME_SO}:	LDFLAGS += -shared
-${NAME_SO}:	LINKER = gcc -o
-${NAME_SO}:	${OBJS}
-	${LINKER} $@ ${LDFLAGS} $^
+${NAME_SO}:	LINK = gcc -o
+${NAME_SO}:	${OBJ}
+	${LINK} $@ ${LDFLAGS} $^
 
 all:	${NAME_A} ${NAME_SO}
 
--include ${DEPS}
+-include ${DEP}
 
-${OBJD}%.o:	${SRCD}%.c
-	@${MAKEDIR} ${@D}
+${OBJ_DIR}%.o:	${SRC_DIR}%.c
+	@${MKDIR} ${@D}
 	${CC} $@ ${CFLAGS} $<
 
 clean:
-	${RM} ${OBJD}
+	${RM} ${OBJ_DIR}
 
 fclean:
-	${RM} ${OBJD} ${NAME_A} ${NAME_SO}
+	${RM} ${OBJ_DIR} ${NAME_A} ${NAME_SO}
 
 re:	fclean all
 
 norm:
-	@norminette ${SRCD} | grep 'Error' ; true
+	@norminette ${SRC_DIR} | grep 'Error' ; true
 
 coffee:
 	@echo '                                              '
