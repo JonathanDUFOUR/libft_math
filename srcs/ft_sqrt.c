@@ -6,11 +6,11 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 02:58:50 by jonathan          #+#    #+#             */
-/*   Updated: 2021/07/21 03:02:53 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/08/18 02:39:38 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "typedefs/t_int.h"
+#include "type/t_int.h"
 
 float	ft_sqrt(t_uint n)
 {
