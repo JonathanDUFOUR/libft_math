@@ -6,11 +6,11 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 06:24:09 by jdufour           #+#    #+#             */
-/*   Updated: 2021/08/18 02:39:38 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:05:30 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "type/t_int.h"
+#include "t_int.h"
 
 int	ft_power(int n, t_uint pow)
 {

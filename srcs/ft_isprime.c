@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 12:11:43 by jonathan          #+#    #+#             */
-/*   Updated: 2021/08/18 02:39:38 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:05:30 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
-#include "type/t_int.h"
+#include "t_int.h"
 
 bool	ft_isprime(t_lint n)
 {
